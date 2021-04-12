@@ -1,4 +1,4 @@
-const nightCity = {
+const nightcity = {
     id: 'nightcity',
     title: 'Night City',
     map: {
@@ -28,7 +28,7 @@ const nightCity = {
     }]
 };
 
-const spaceCity = {
+const spacecity = {
     id: 'spacecity',
     title: 'Space City',
     map: {
@@ -58,14 +58,14 @@ const spaceCity = {
     }]
 };
 
-const riverCity = {
+const rivercity = {
     id: 'rivercity',
     title: 'River City',
     map: {
         top: '31%',
         left: '5%',
     },
-    prerequisites: ['dragon', 'monsters'],
+    prerequisites: ['nightcity', 'spacecity'],
     image: '../assets/river.jpg',
     description: `As you return home to your base in River City you are presented with the dilemma of using Venos's virus program.  You know it will completely change the world if you use it. In your mind you have three choices. What do you do?`,
 
@@ -73,7 +73,7 @@ const riverCity = {
         id: 'use',
         description: 'Delete the internet!',
         result: `You've chosen to implant the virus into the internet and break everything we know. You are the man! +500 hp for fulfilling your purpose.`,
-        hp: +500,
+        hp: 500,
         gold: 0
     }, {
         id: 'sell',
@@ -91,9 +91,9 @@ const riverCity = {
 };
 
 const quests = [
-    nightCity,
-    spaceCity,
-    riverCity
+    nightcity,
+    spacecity,
+    rivercity
 ];
 
 export default quests;

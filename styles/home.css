@@ -1,1 +1,48 @@
 /* add home page styles here */
+* {
+    box-sizing: border-box;
+    background-color: lightgray;
+}
+
+h1 {
+    font-size: 4rem;
+
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    
+    text-align: center;
+
+}
+
+.character {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input + img {
+    cursor: pointer;
+}
+
+input:checked + img {
+    outline: 5px solid #f00
+}
+
+p {
+    
+}
+
+/* input:checked {
+    outline: 10px solid blue;
+} */
+
+.character {
+    color: white;
+    font-size: 30px;
+}
+
