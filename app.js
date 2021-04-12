@@ -7,13 +7,13 @@ form.addEventListener('submit', (event) => {
     const data = new FormData(form);
 
     const name = data.get('name');
-    const userClass = data.get('class');
+    const userClass = data.get('race');
 
     const user = {
         hp: 100,
         gold: 20,
         name: name,
-        class: userClass,
+        character: userClass,
         completed: {}
     };
     setUser(user);
