@@ -16,15 +16,44 @@ gold.textContent = user.gold;
 //     window.location = '../results';
 // }
 
+function questCompleter(quests) {
+    const span = document.createElement('span');
+    span.classList.add('quest');
+    span.classList.add('completed');
+    span.style.top = quests.map.top;
+    span.style.left = quests.map.left;
+    span.textContent = quests.title;
+    return span;
+}
+
+function linkMaker(quest) {
+    const link = document.createElement('a');
+    link.classList.add('quest');
+    link.href = `../quest/?id=${quest.id}`;
+    link.style.top = quest.map.top;
+    link.style.left = quest.map.left;
+    link.textContent = quest.title;
+    return link;
+}
+
 const section = document.querySelector('section');
+const nav = document.getElementById('completerquests');
 
 for (let quest of quests) {
-    const anchorTag = document.createElement('a');
+    let questDisplay = null;
+    const finished = user.completed[quest.id];
+    if (finished) {
+        questDisplay = questCompleter(quest);
+    }
+    else {
+        questDisplay = linkMaker(quest);
+    }
 
-    anchorTag.textContent = quest.title;
-
-    anchorTag.href = `../quest/?id=${quest.id}`;
-
-    section.append(anchorTag);
+    // const anchorTag = document.createElement('a');
+    // anchorTag.textContent = quest.title;
+    //anchorTag.href = `../quest/?id=${quest.id}`;
+    //} else 
+    //section.append(anchorTag);
+    nav.appendChild(questDisplay);
 }
 
